@@ -1,0 +1,232 @@
+{
+  "$schema": "https://example.com/design-tokens.schema.json",
+  "meta": {
+    "name": "Project Design Tokens",
+    "description": "EXAMPLE VALUES ONLY. Never apply as a NyxWork default. Derive project-specific values from the source-of-truth hierarchy."
+  },
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "#064A9D"
+      },
+      "primaryHover": {
+        "value": "#053F88"
+      },
+      "primaryActive": {
+        "value": "#04366F"
+      },
+      "textOnBrand": {
+        "value": "#FFFFFF"
+      }
+    },
+    "background": {
+      "app": {
+        "value": "#EEF5FC"
+      },
+      "sidebar": {
+        "value": "#F4F8FD"
+      },
+      "surface": {
+        "value": "#FFFFFF"
+      },
+      "subtle": {
+        "value": "#F7FAFD"
+      },
+      "selected": {
+        "value": "#DCEAF9"
+      }
+    },
+    "border": {
+      "default": {
+        "value": "#CAD9E8"
+      },
+      "subtle": {
+        "value": "#DCE6F0"
+      },
+      "strong": {
+        "value": "#AFC6DC"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#0A1628"
+      },
+      "secondary": {
+        "value": "#53657A"
+      },
+      "muted": {
+        "value": "#7D8DA1"
+      },
+      "disabled": {
+        "value": "#A7B2C0"
+      }
+    },
+    "status": {
+      "success": {
+        "value": "#27836F"
+      },
+      "successBackground": {
+        "value": "#D7EEE8"
+      },
+      "warning": {
+        "value": "#A37625"
+      },
+      "warningBackground": {
+        "value": "#F4EAD4"
+      },
+      "error": {
+        "value": "#C94D62"
+      },
+      "errorBackground": {
+        "value": "#F4DDE2"
+      },
+      "info": {
+        "value": "#275B91"
+      },
+      "infoBackground": {
+        "value": "#DDE9F7"
+      }
+    },
+    "focus": {
+      "value": "#2678DB"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "body": {
+        "value": "Inter, Geist, Plus Jakarta Sans, system-ui, sans-serif"
+      },
+      "heading": {
+        "value": "{typography.fontFamily.body.value}"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "value": "11px"
+      },
+      "sm": {
+        "value": "12px"
+      },
+      "md": {
+        "value": "14px"
+      },
+      "lg": {
+        "value": "16px"
+      },
+      "xl": {
+        "value": "20px"
+      },
+      "2xl": {
+        "value": "24px"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "value": 400
+      },
+      "medium": {
+        "value": 500
+      },
+      "semibold": {
+        "value": 600
+      },
+      "bold": {
+        "value": 700
+      }
+    }
+  },
+  "spacing": {
+    "1": {
+      "value": "4px"
+    },
+    "2": {
+      "value": "8px"
+    },
+    "3": {
+      "value": "12px"
+    },
+    "4": {
+      "value": "16px"
+    },
+    "5": {
+      "value": "20px"
+    },
+    "6": {
+      "value": "24px"
+    },
+    "8": {
+      "value": "32px"
+    },
+    "10": {
+      "value": "40px"
+    },
+    "12": {
+      "value": "48px"
+    }
+  },
+  "radius": {
+    "xs": {
+      "value": "3px"
+    },
+    "sm": {
+      "value": "4px"
+    },
+    "md": {
+      "value": "6px"
+    },
+    "lg": {
+      "value": "8px"
+    },
+    "pill": {
+      "value": "999px"
+    },
+    "circle": {
+      "value": "50%"
+    }
+  },
+  "shadow": {
+    "none": {
+      "value": "none"
+    },
+    "raised": {
+      "value": "0 1px 2px rgba(20,45,75,0.04)"
+    },
+    "overlay": {
+      "value": "0 8px 24px rgba(20,45,75,0.12)"
+    },
+    "modal": {
+      "value": "0 16px 48px rgba(20,45,75,0.16)"
+    }
+  },
+  "motion": {
+    "durationFast": {
+      "value": "120ms"
+    },
+    "durationNormal": {
+      "value": "180ms"
+    },
+    "easingStandard": {
+      "value": "cubic-bezier(0.2, 0, 0, 1)"
+    }
+  },
+  "zIndex": {
+    "base": {
+      "value": 0
+    },
+    "sticky": {
+      "value": 10
+    },
+    "dropdown": {
+      "value": 30
+    },
+    "overlay": {
+      "value": 40
+    },
+    "modal": {
+      "value": 50
+    },
+    "toast": {
+      "value": 60
+    }
+  }
+}
