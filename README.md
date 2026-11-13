@@ -249,4 +249,4 @@ Remaining: pemeriksaan render desktop/mobile dan interaksi filter.
 
 Untuk audit-only, agent memberikan temuan bernomor dengan lokasi, bukti, dampak, dan saran tanpa mengedit. Permintaan memperbaiki tetap dijalankan langsung dalam scope yang diminta.
 
-Pendekatan pemisahan konteks, filter, dan bukti output diinformasikan oleh [anti-slop](https://github.com/miqdadbadjuber/anti-slop). Aturan NyxWork ditulis khusus untuk workflow adaptif, brand, dan architecture-aware reuse; paket ini tidak menyertakan installer, plugin, atau implementasi proyek tersebut.
+NyxWork menyatukan arah desain, aturan anti-slop, governance brand dan design system, architecture-aware reuse, serta validasi berbasis bukti dalam satu workflow adaptif.
