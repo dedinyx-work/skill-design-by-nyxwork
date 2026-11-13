@@ -2,7 +2,7 @@
 
 Skill untuk membantu AI coding agent menghasilkan UI yang punya karakter, hierarki UX yang jelas, konsisten dengan brand, dan setia pada referensi visual.
 
-**Versi paket: 3.1.0.** Nama pemanggilan tetap `skill-design-by-nyxwork-v3`.
+**Versi paket: 3.1.1.** Nama pemanggilan tetap `skill-design-by-nyxwork-v3`.
 
 User cukup memberi tujuan atau contoh tampilan. Agent bertanggung jawab memeriksa proyek, memilih panduan yang relevan, mengambil keputusan desain yang masuk akal, dan memvalidasi hasil sesuai skala pekerjaan.
 
@@ -78,6 +78,20 @@ Prinsip ini adalah default yang dapat dijelaskan, bukan resep layout yang dipaks
 5. Prinsip NyxWork dan judgment agent.
 
 **Brand mengatur identitas; referensi mengatur aspek visual yang memang diminta; requirement mengatur perilaku.** Urutan inspeksi file tidak mengubah otoritas ini.
+
+### Jika design system sudah tersedia
+
+Design system menjadi batas implementasi default. Asumsi agent atau referensi inspirasi tidak memberikan izin untuk menyimpang. Referensi diadaptasikan ke sistem, kecuali user secara eksplisit meminta perubahan sistem tersebut. Konflik yang memerlukan perubahan kontrak disampaikan untuk keputusan terarah.
+
+Sebelum membuat komponen, agent memetakan struktur aplikasi, layout, theme/token, layer komponen, public exports, batas state/data, serta contoh pemakaian lintas fitur. Pemeriksaan tidak berhenti di file halaman yang sedang diedit, tetapi tetap proporsional tanpa membaca semua file.
+
+- Komponen yang setara sudah ada → **wajib reuse melalui API existing**.
+- Variant yang sesuai sudah ada → gunakan variant tersebut.
+- Dapat disusun dari primitive existing → komposisikan sesuai arsitektur.
+- Ada gap kapabilitas → perluas secara koheren atau buat komponen yang benar-benar belum tersedia.
+- Perlu keluar dari kontrak design system → jelaskan konflik dan minta keputusan spesifik.
+
+Menyalin markup, mengganti nama komponen, atau membuat wrapper dengan tanggung jawab yang sama tidak dianggap reuse. Komponen baru yang mengikuti sistem untuk kebutuhan yang belum terwakili tetap boleh dibuat tanpa approval berulang, dengan alasan singkat berdasarkan hasil inspeksi.
 
 Contoh: referensi memakai oranye, tetapi brand mewajibkan biru. Pada mode adaptasi brand, agent mengambil komposisi referensi sambil mempertahankan warna resmi. Konflik material dijelaskan; aturan wajib tidak diubah diam-diam.
 
@@ -207,3 +221,7 @@ Hasil akhir tidak perlu laporan panjang. Cukup perubahan utama, keputusan pentin
 - Template token CSS/JSON selaras dan template dokumentasi opsional.
 
 Identitas V3 tetap dipertahankan; metadata paket dinaikkan ke 3.1.0 untuk menandai perubahan workflow.
+
+### Patch 3.1.1
+
+Mempertegas batas design system existing, kewajiban reuse komponen setara, inspeksi arsitektur lintas fitur, dan justifikasi gap sebelum membuat atau memperluas komponen.

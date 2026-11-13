@@ -12,5 +12,6 @@ Define relevant items:
 - Core components with purpose, variants, relevant states, content constraints, and keyboard behavior.
 - Responsive region transformations, accessibility, anti-patterns, and fidelity limitations.
 
-Reuse coherent project conventions. Extend them where approved targets require change. Do not generate speculative components, rename an entire token system unnecessarily, or leave irrelevant placeholder sections in delivered documentation.
+Reuse coherent project conventions. Extend within their contract for verified capability gaps; change the contract only when the system-level change is explicitly authorized. Do not generate speculative components, rename an entire token system unnecessarily, or leave irrelevant placeholder sections in delivered documentation.
+An approved inspiration/reference is not automatic approval to change an established system. Apply the controller's established-system boundary: adapt within the system, and obtain a scoped decision for a conflicting contract change. New components that follow the system and fill verified gaps do not require ceremonial approval.
 Ensure brand expression appears in actual layout, typography, imagery, and interaction decisions, not only a palette. Validate representative screens before spreading a new system across the product.

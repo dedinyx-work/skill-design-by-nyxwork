@@ -2,7 +2,7 @@
 name: skill-design-by-nyxwork-v3
 description: Design and refine distinctive frontend UI with clear UX hierarchy, anti-slop decisions, brand guidelines, visual reference fidelity, and responsive validation. Use for new screens, landing pages, components, design systems, and redesigns.
 metadata:
-  version: "3.1.0"
+  version: "3.1.1"
   author: NyxWork
 ---
 
@@ -33,6 +33,10 @@ All references inherit this policy; inspection order never changes authority.
 Assign sources by dimension: brand controls identity; reference controls its agreed composition/treatment; product requirements control behavior. Reference colors do not silently replace mandatory brand colors. An existing component may be extended when the approved target requires it.
 For unresolved material conflicts, explain the specific collision and ask once; do not silently average. For nonmaterial gaps, proceed with a reversible interpretation. User overrides stay scoped; do not claim accessibility or brand compliance when an override breaks it.
 
+### Established-system boundary
+When a project has an established design system, treat it as the default implementation boundary. Agent assumptions and inspiration references do not authorize departures. Higher-priority sources establish intent, but a conflicting reference alone is not approval to change the system: adapt it within the system unless the user explicitly requests that system-level change. Explain material conflicts and obtain a scoped decision before changing the contract.
+New compositions and genuinely missing components are allowed within existing tokens, patterns, accessibility contracts, and architecture. Do not seek approval for routine compliant reuse or composition. If a required capability cannot fit without changing the system, explain the gap and ask a focused question while continuing independent work.
+
 ## Adaptive reference loading
 Select the closest task internally; no user classification ceremony. Paths below are relative to `references/`. Read applicable files before decisions they govern. Reuse guidance already loaded in the current context.
 
@@ -60,12 +64,13 @@ Keep this internal for simple tasks. For substantial new UI, give the user a bri
 
 ## Design execution rules
 - Existing product: inspect → reuse → extend → refine. Preserve working behavior unless scope changes it.
+- Inspect architecture before component creation: map application entry points, route/layout shells, design-system/theme sources, component layers and public exports, state/data boundaries, and representative consumers across features. Follow conventions and instructions in the repository. Inspect enough breadth to find shared equivalents; do not read every file or use inspection as a reason for unrelated rewrites.
 - Hierarchy: make the primary task obvious through order, scale, proximity, alignment, contrast, and progressive disclosure. One dominant action per task context, not an arbitrary one-button rule for the whole screen.
 - Distinctiveness: use a coherent composition, type personality, imagery, rhythm, and brand signatures. Do not add novelty to compensate for weak structure. Usable conventions remain valuable.
 - Reference fidelity: choose faithful reproduction, brand adaptation, or directional inspiration. Infer from the request and state the mode briefly if ambiguity matters. Preserve the defining anchors for that mode.
 - Asset fidelity: exact supplied asset → compatible project asset → intentionally matching created asset → neutral placeholder. Disclose material substitutions; never silently replace distinctive art with emoji or unrelated stock.
 - Tokens: inspect existing roles, reuse, then add justified semantic tokens. Templates demonstrate structure, never a mandatory NyxWork palette or type style.
-- Components: reuse equivalent components; extend coherent APIs; create new components for distinct purpose or repeated behavior. Avoid monoliths and speculative UI kits.
+- Components: equivalent existing components must be reused through their intended public API. Check variants and primitive compositions before creation. Do not duplicate by renaming, copying markup, or adding a parallel local wrapper with the same responsibility. Extend coherent APIs only for a real capability gap; create new components only when no suitable equivalent exists and document that gap briefly. Preserve ownership, dependency direction, and state/data boundaries. See `component-governance.md`.
 - Expression: gradients, shadows, large type, rounded forms, and rich illustration are valid when supported by brand, reference, or communication purpose. Restraint is a fallback, not a universal aesthetic.
 - Responsive: choose Preserve / Reflow / Wrap / Collapse / Scroll / Hide / Reorder per region. Preserve critical tasks, readable content, and reachable controls.
 - Content: use meaningful, domain-specific labels; distinguish sample data from factual claims. Cover relevant empty, loading, error, and long-content states without inventing backend behavior.
