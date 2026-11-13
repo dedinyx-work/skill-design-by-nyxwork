@@ -27,3 +27,4 @@ Screenshots compare appearance; test actual interactions separately. Inspect loa
 Blockers are broken core tasks, material mandatory-brand violations, major reference-anchor mismatches in faithful mode, or serious accessibility/layout failures. Fix feasible blockers before claiming completion.
 If tools, fonts, assets, or runtime are unavailable, deliver feasible changes and identify exact checks/gaps still unresolved. Do not require the user to configure extra tooling for every small task.
 Final summary: meaningful changes, checks actually performed, and remaining limitations. Add source mode, brand deviations, or evidence detail when relevant; a long compliance report is not mandatory.
+For substantial work or explicit audits, use `context-and-delivery.md` check IDs and status vocabulary. UNVERIFIED is distinct from PASS; N/A is only for checks outside the task's scope.

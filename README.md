@@ -2,7 +2,7 @@
 
 Skill untuk membantu AI coding agent menghasilkan UI yang punya karakter, hierarki UX yang jelas, konsisten dengan brand, dan setia pada referensi visual.
 
-**Versi paket: 3.1.1.** Nama pemanggilan tetap `skill-design-by-nyxwork-v3`.
+**Versi paket: 3.2.0.** Nama pemanggilan tetap `skill-design-by-nyxwork-v3`.
 
 User cukup memberi tujuan atau contoh tampilan. Agent bertanggung jawab memeriksa proyek, memilih panduan yang relevan, mengambil keputusan desain yang masuk akal, dan memvalidasi hasil sesuai skala pekerjaan.
 
@@ -113,6 +113,8 @@ Jika aset/font tidak tersedia, agent memakai fallback yang dijelaskan. Jika pasa
 
 ## Struktur paket
 
+Untuk pekerjaan besar, `references/context-and-delivery.md` menambahkan kontrak konteks dan output yang ringkas. Agent membaca `DESIGN.md` atau sumber arah existing bila tersedia; user tidak wajib membuat file baru. Template `design-context.md` dan `delivery-report.md` bersifat opsional.
+
 ```text
 SKILL.md                         Controller dan aturan otoritas
 references/
@@ -127,6 +129,7 @@ references/
   responsive-accessibility.md    Transformasi layout dan aksesibilitas
   redesign-migration.md          Migrasi tanpa merusak workflow
   validation.md                  Validasi proporsional berbasis bukti
+  context-and-delivery.md         Konteks kerja, check ID, dan format hasil/audit
 templates/
   design-brief.md                Catatan arah kerja opsional
   brand-map.md                   Pemetaan aturan brand opsional
@@ -134,6 +137,8 @@ templates/
   design-tokens.css              Contoh role token CSS
   design-tokens.json             Representasi role contoh yang setara
   validation-notes.md            Catatan bukti opsional
+  design-context.md              Konteks lintas screen/session opsional
+  delivery-report.md             Tabel status pemeriksaan opsional
 openai.yaml                      Metadata integrasi yang disertakan
 ```
 
@@ -225,3 +230,23 @@ Identitas V3 tetap dipertahankan; metadata paket dinaikkan ke 3.1.0 untuk menand
 ### Patch 3.1.1
 
 Mempertegas batas design system existing, kewajiban reuse komponen setara, inspeksi arsitektur lintas fitur, dan justifikasi gap sebelum membuat atau memperluas komponen.
+
+### Versi 3.2.0: konteks dan output yang dapat diperiksa
+
+Pekerjaan besar dimulai dengan ringkasan tujuan, sumber otoritatif, arah visual, reuse komponen, mode referensi, dan asumsi material. Agent menyusunnya dari konteks yang tersedia, tanpa formulir atau pertanyaan mode wajib.
+
+Output menggunakan check ID **NW-01 sampai NW-09** untuk arsitektur, reuse, brand/system, hierarki, karakter visual, fidelity, kejujuran konten/interaksi, responsive/aksesibilitas, dan validasi. Status dibedakan menjadi **PASS, FAIL, UNVERIFIED, dan N/A** agar keterbatasan tools tidak disamakan dengan kelulusan.
+
+Contoh output ringkas:
+
+```text
+Implemented: halaman Orders mengikuti sistem existing.
+Decisions: reuse DataTable, StatusBadge, dan FilterBar; tanpa UI kit baru.
+Checks: NW-02 PASS melalui import komponen canonical;
+        NW-09 UNVERIFIED karena runtime tidak tersedia.
+Remaining: pemeriksaan render desktop/mobile dan interaksi filter.
+```
+
+Untuk audit-only, agent memberikan temuan bernomor dengan lokasi, bukti, dampak, dan saran tanpa mengedit. Permintaan memperbaiki tetap dijalankan langsung dalam scope yang diminta.
+
+Pendekatan pemisahan konteks, filter, dan bukti output diinformasikan oleh [anti-slop](https://github.com/miqdadbadjuber/anti-slop). Aturan NyxWork ditulis khusus untuk workflow adaptif, brand, dan architecture-aware reuse; paket ini tidak menyertakan installer, plugin, atau implementasi proyek tersebut.
