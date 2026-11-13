@@ -1,7 +1,7 @@
 interface:
-  display_name: "Skill Design by NyxWork"
+  display_name: "Skill Design by NyxWork V3"
   short_description: "Anti AI-slop product UI design governance by NyxWork"
-  default_prompt: "Use $skill-design-by-nyxwork to design or refine this frontend UI by removing AI-slop patterns, preserving product intent, and using coherent components and semantic tokens."
+  default_prompt: "Use $skill-design-by-nyxwork-v3 to design or refine this UI with clear UX hierarchy, distinctive brand-appropriate direction, reference fidelity, reusable components, and proportional validation. Infer reversible details and ask only about material ambiguity."
 
 policy:
   allow_implicit_invocation: true

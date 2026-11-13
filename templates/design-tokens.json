@@ -1,19 +1,37 @@
 {
-  "$schema": "nyxwork-v3-project-tokens",
-  "note": "Template only; replace with project-specific semantic tokens.",
-  "spacing": {
-    "1": "4px",
-    "2": "8px",
-    "3": "12px",
-    "4": "16px",
-    "6": "24px",
-    "8": "32px",
-    "12": "48px"
-  },
-  "radius": {
-    "sm": "6px",
-    "md": "10px",
-    "lg": "16px",
-    "pill": "9999px"
+  "note": "Example flat role map corresponding to design-tokens.css; replace with project-specific values. Not a standardized token schema.",
+  "tokens": {
+    "color-bg-app": "#ffffff",
+    "color-bg-surface": "#ffffff",
+    "color-text-primary": "#171717",
+    "color-text-secondary": "#525252",
+    "color-border-default": "#767676",
+    "color-action-bg": "#171717",
+    "color-action-bg-hover": "#333333",
+    "color-action-text": "#ffffff",
+    "color-focus": "#005fcc",
+    "color-error-text": "#b91c1c",
+    "font-family-body": "system-ui, sans-serif",
+    "font-family-heading": "system-ui, sans-serif",
+    "font-size-body": "1rem",
+    "font-size-heading": "2rem",
+    "font-weight-body": "400",
+    "font-weight-heading": "700",
+    "line-height-body": "1.5",
+    "line-height-heading": "1.15",
+    "letter-spacing-heading": "-0.02em",
+    "space-1": "4px",
+    "space-2": "8px",
+    "space-3": "12px",
+    "space-4": "16px",
+    "space-6": "24px",
+    "space-8": "32px",
+    "space-12": "48px",
+    "size-target-touch": "44px",
+    "radius-control": "6px",
+    "radius-surface": "10px",
+    "shadow-surface": "none",
+    "focus-ring-width": "2px",
+    "focus-ring-offset": "2px"
   }
 }
