@@ -1,323 +1,100 @@
 ---
-name: skill-design-by-nyxwork
-description: >
-  Anti-AI-slop product UI design governance for AI coding agents. Use this skill
-  when creating, redesigning, reviewing, extending, or refactoring frontend UI.
-  It prevents generic AI visual, structural, content, and interaction patterns
-  while preserving product intent, existing systems, reusable components,
-  accessibility, responsiveness, and maintainability.
+name: skill-design-by-nyxwork-v3
+description: Intent-first anti-AI-slop product UI governance for AI coding agents.
 metadata:
-  version: 2.0.0
+  version: 3.0.0
   author: NyxWork
 ---
 
-# Skill Design by NyxWork
+# Design by NyxWork V3
 
 ## Purpose
+Controller for frontend design decisions. V3 is an execution contract, router, and completion gate; detailed rules live in `references/`.
 
-This skill is the controller for frontend design decisions.
+## Core Principle
+Every visible element must justify its presence through workflow, hierarchy, interaction need, brand language, or system consistency.
 
-Its job is to keep AI-generated UI consistent, maintainable, accessible,
-responsive, and aligned with the user's product or visual references.
+Product intent → User job → Information architecture → Interaction model → Visual hierarchy → Component selection → Styling → Rendered validation.
 
-This file intentionally stays concise.
+## Mandatory Execution Contract
+INTENT → REFERENCE ANALYSIS → UI DECISION → ANTI-SLOP → TOKENS → COMPONENT GOVERNANCE → RESPONSIVE/ACCESSIBILITY → IMPLEMENTATION → RENDER VALIDATION → COMPLIANCE REPORT.
 
-Load the relevant reference files only when the task requires them.
-
-
-## V2 Core Principle
-
-Design with intent. Every visible element must justify its presence through user workflow, information hierarchy, interaction need, brand language, or system consistency.
-
-The goal is not to make UI more decorative. The goal is to make AI-generated UI feel deliberately product-designed rather than template-generated.
-
-Before visual styling, reason in this order:
-
-Product intent → User job → Information architecture → Interaction model → Visual hierarchy → Component selection → Styling
-
-## Anti-Slop Operating Loop
-
-For meaningful UI work, use:
-
-Request → Understand product intent → Inspect existing system → Detect slop risk → Choose UI architecture → Apply design language → Reuse/extend components → Implement → Stress-test real content → Responsive/accessibility → Rendered validation → Complete
-
-Classify AI-slop risk across four dimensions:
-
-1. Visual slop: unjustified gradients, glow, glass, oversized radius, excessive shadows, random accent colors, pill-heavy controls, decorative icon containers, oversized typography, presentation-first whitespace.
-2. Structural slop: card-inside-card layouts, everything-as-card dashboards, vanity KPI grids, unnecessary charts, excessive wrappers, screenshot-first layouts, desktop structures merely stacked on mobile.
-3. Content slop: generic greetings, filler descriptions, redundant helper text, vague CTA copy, labels that explain themselves, placeholder-friendly content that does not reflect real data.
-4. Interaction slop: too many primary actions, unnecessary modals, ambiguous icon-only actions, one-item dropdowns, confirmation for harmless actions, filters without user need, tabs used as navigation, complex workflows trapped in dialogs.
-
-Load `references/anti-ai-slop.md` for detailed detection and correction rules.
-Load `references/ui-decision-framework.md` before introducing a new layout or interaction pattern.
-
-## Role
-
-Act as a Product UI Designer, Design System Engineer, and Frontend Design
-Engineer.
-
-Prioritize:
-
-1. User workflow
-2. Information hierarchy
-3. Existing product consistency
-4. Design-system integrity
-5. Accessibility
-6. Responsive behavior
-7. Visual polish
-
-Do not treat UI work as decoration.
-
-## When This Skill Applies
-
-Use this skill when the user asks to:
-
-- Create or redesign frontend UI
-- Improve an existing interface
-- Remove generic AI-generated styling
-- Match or learn from a visual reference
-- Build a design system
-- Generate design tokens
-- Normalize inconsistent components
-- Extend an existing SaaS, dashboard, admin, ERP, CRM, HR, or internal tool
-- Review UI quality before production
+Never claim NyxWork compliance if a required stage/reference was skipped.
 
 ## Source of Truth
-
-Always follow this order:
-
-1. Explicit user requirements
-2. Existing product design system
-3. Existing reusable components
-4. Existing design tokens
-5. Existing page and interaction patterns
-6. User-provided visual reference
-7. This skill
+1. Explicit user requirements and approved decisions
+2. Approved visual reference for the requested screen
+3. Existing coherent product design system
+4. Existing reusable components and semantic tokens
+5. Existing product/page/interaction patterns
+6. NyxWork governance
+7. Simplest intentional solution
 8. Agent judgment
 
-Do not silently override a higher-priority source.
+Identify material conflicts; never silently average them.
 
-## Operating Modes
+## Mandatory Reference Loading Gate
+### A — New UI from visual reference
+MUST load: `visual-reference-analysis.md`, `ui-decision-framework.md`, `anti-ai-slop.md`, `token-generator.md`, `component-governance.md`, `responsive-accessibility.md`, `validation.md`.
+Load `design-system-generator.md` if no coherent system exists or one must be formalized.
 
-### Existing Product
+### B — Existing UI refinement
+MUST load: `visual-reference-analysis.md` when a reference exists, `anti-ai-slop.md`, `component-governance.md`, `responsive-accessibility.md`, `validation.md`.
+Also load `token-generator.md` whenever tokens/typography/spacing/radius/elevation/color roles change.
 
-Inspect first.
+### C — Design system creation
+MUST load: `ui-decision-framework.md`, `token-generator.md`, `design-system-generator.md`, `component-governance.md`, `responsive-accessibility.md`, `validation.md`.
 
-Use:
+### D — Redesign / migration
+MUST load: `visual-reference-analysis.md` when references exist, `ui-decision-framework.md`, `redesign-migration.md`, `anti-ai-slop.md`, `token-generator.md`, `component-governance.md`, `responsive-accessibility.md`, `validation.md`.
 
-Inspect → Reuse → Extend → Refine
+### E — Component-only work
+MUST load: `component-governance.md`, `anti-ai-slop.md`, `responsive-accessibility.md`, `validation.md`.
 
-Do not redesign the product from zero unless explicitly requested.
+Mandatory references may not be silently skipped.
 
-### Existing Product + Visual Reference
+## Pre-Implementation Gate
+Before editing UI code establish internally: task classification; product intent/user job; source of truth; information hierarchy; extracted visual characteristics; design-system status; reusable components; token impact; responsive strategy; accessibility; unsupported assumptions; asset fidelity limitations.
 
-Use the reference to extract visual rules.
+## Inspect Before Create
+Existing products: Inspect → Reuse → Extend → Refine.
 
-Do not blindly copy the screenshot.
+## Anti-Invention Rule
+Do not invent unsupported sections, navigation, filters, badges, dashboards, cards, gradients, shadows, glass, decorative containers, illustrations, icons, interactions, mobile navigation, footer structures, or product behavior. A new element needs support from requirement, approved reference, established pattern, or necessary accessibility/interaction constraint.
 
-Translate the reference into:
-
-Visual language → Design system → Tokens → Component rules → Migration plan
-
-Load:
-
-- `references/visual-reference-analysis.md`
-- `references/design-system-generator.md`
-- `references/token-generator.md`
-- `references/redesign-migration.md`
-- `references/anti-ai-slop.md`
-- `references/ui-decision-framework.md`
-
-### No Existing Design System
-
-Generate a lightweight design system before implementing many screens.
-
-Load:
-
-- `references/design-system-generator.md`
-- `references/token-generator.md`
-
-## MUST
-
-The agent MUST:
-
-- Inspect existing UI patterns before introducing new ones
-- Search for reusable components before creating new components
-- Reuse existing design tokens when possible
-- Preserve existing brand identity unless the user requests a redesign
-- Use semantic tokens instead of repeated arbitrary values
-- Define clear visual hierarchy
-- Support relevant interaction states
-- Consider responsive behavior
-- Maintain readable contrast and visible focus states
-- Keep implementation maintainable
-- Validate the result before declaring the UI complete
-
-## MUST NOT
-
-The agent MUST NOT:
-
-- Invent a parallel design system inside an existing product
-- Add gradients, glassmorphism, glow, large shadows, or decorative effects by default
-- Use arbitrary colors, radius, spacing, or shadows without a system reason
-- Turn every section into a card
-- Turn every action into a pill button
-- Mix icon libraries without a strong reason
-- Duplicate existing components
-- Install a new UI framework when the current stack is sufficient
-- Redesign unrelated areas outside the requested scope
-- Use color as the only signal for state
-- Hide essential actions behind hover-only behavior
-- Optimize only for screenshot similarity at the cost of maintainability
-
-## Component Reuse Rule
-
-Before creating a component:
-
-1. Search for an existing equivalent
-2. Reuse it if suitable
-3. Extend it if necessary
-4. Add a variant if that matches the existing API
-5. Create a new component only when no clean reusable solution exists
-
-Load `references/component-governance.md` for larger component changes.
+## Asset Fidelity Rule
+Distinctive photography/illustration/iconography/texture/hand lettering:
+Exact supplied asset → close project asset → intentionally created matching asset → neutral placeholder.
+Never silently downgrade to emoji, generic icons, crude SVGs, or unrelated stock assets.
 
 ## Token-First Rule
+Consume semantic tokens when roles exist. Avoid repeated raw hex, arbitrary spacing/radii/type/shadows. Inspect → reuse → create justified semantic token → document true one-off exception.
 
-Prefer semantic tokens over hardcoded values.
+## Typography Governance
+Evaluate personality, hierarchy, role, weight, scale, line height, and letter spacing. Do not default to generic geometric sans when the approved reference communicates another personality.
 
-Before adding a new color, spacing value, radius, shadow, typography value, or
-motion value:
+## Component Governance
+Create/extend based on repeated visual pattern, behavior, or semantic product role. Avoid monoliths and premature generic UI kits.
 
-1. Check existing tokens
-2. Reuse the closest semantic token
-3. Create a new token only if it is reusable and semantically meaningful
+## Responsive Transformation
+Never desktop → shrink → stack. For each region choose Preserve / Reflow / Wrap / Collapse / Scroll / Hide / Reorder. Validate touch targets, overflow, safe areas, typography, image crop, and scroll boundaries.
 
-Load `references/token-generator.md` when generating or restructuring tokens.
+## Anti-AI-Slop Gate
+Audit unsupported excessive cards, nested cards, floating shadows, glass, gradients, pills, radius, decorative icon containers, filler copy, badges, generic dashboard patterns, fake metrics, presentation-first whitespace, and filters/interactions without need.
 
-## Visual Reference Rule
+## Visual Validation Loop
+IMPLEMENT → RENDER → COMPARE → IDENTIFY DELTAS → FIX → RENDER AGAIN.
+Compare composition, alignment, density, whitespace, typography, color, image/component proportions, hierarchy, assets, and responsive behavior. Technical checks alone are insufficient.
 
-When the user provides screenshots or visual references:
+## Self-Correction
+If output diverges materially, return to reference analysis and fix the underlying decision before adding patch CSS.
 
-Extract:
-
-- Density
-- Typography hierarchy
-- Spacing rhythm
-- Surface hierarchy
-- Border treatment
-- Radius
-- Shadow behavior
-- Color roles
-- Navigation patterns
-- Component proportions
-- Icon language
-- Interaction style
-
-Do not copy branding, proprietary assets, or arbitrary pixels without system logic.
-
-Load `references/visual-reference-analysis.md`.
-
-## Redesign Rule
-
-When cleaning an AI-slop interface:
-
-Do not restyle everything randomly.
-
-Use:
-
-Audit → Extract target language → Define tokens → Map existing components →
-Normalize patterns → Migrate screen-by-screen → Validate
-
-Load `references/redesign-migration.md`.
-
-## Responsive + Accessibility Rule
-
-Any meaningful frontend task must consider responsive behavior and accessibility.
-
-Load `references/responsive-accessibility.md` when the task includes:
-
-- Layout changes
-- Forms
-- Navigation
-- Tables
-- Dialogs
-- Mobile behavior
-- Keyboard interaction
-- Complex states
+## Compliance Report
+Report: Task classification; References loaded; Source of truth; Tokens reused/created; Components created/reused; Responsive strategies; Accessibility checked; Anti-slop checked; Visual comparison completed; Known fidelity gaps.
+If any mandatory reference was skipped: `NyxWork execution = INCOMPLETE`.
 
 ## Deviation Protocol
+Explicit user requests win. Keep exceptions scoped and preserve unrelated system rules.
 
-If the user explicitly requests something that conflicts with this skill:
-
-- Follow the user request
-- Keep the exception scoped
-- Do not propagate the exception globally
-- Preserve unrelated design-system rules
-
-If an existing product conflicts with this skill, the existing coherent product
-system wins.
-
-## Agent Workflow
-
-For meaningful UI tasks:
-
-1. Understand the user goal
-2. Inspect the existing project
-3. Identify the current design system
-4. Analyze visual references if present
-5. Choose the correct UI pattern
-6. Reuse or extend existing components
-7. Apply or generate semantic tokens
-8. Implement
-9. Validate responsive behavior, states, accessibility, and visual consistency
-10. Simplify anything that has no functional purpose
-
-## Completion Gate
-
-Do not consider the UI complete until:
-
-- The main user action is clear
-- The UI matches the product or approved reference language
-- Components are reused where possible
-- Tokens are consistent
-- No obvious arbitrary styling remains
-- Relevant states are covered
-- Responsive behavior is acceptable
-- Accessibility basics are satisfied
-- Long content and empty states do not break the layout
-- No unnecessary effects or dependencies were introduced
-
-For detailed checks, load `references/validation.md`.
-
-## Output Artifacts
-
-When the task includes building or formalizing a design system, use:
-
-- `templates/design-system.md`
-- `templates/design-tokens.css`
-- `templates/design-tokens.json`
-
-Generate project-specific copies from these templates instead of editing the
-templates in place.
-
-
-## Design Confidence Rule
-
-Classify important design decisions:
-
-- HIGH: supported by an existing component, token, pattern, requirement, or approved reference. Implement directly.
-- MEDIUM: consistent with the system but introduces a new pattern. Keep it small, reusable, and reversible.
-- LOW: no precedent, unclear workflow, or broad UX consequence. Prefer the smallest reversible solution and avoid silently propagating it across the product.
-
-Do not use low-confidence assumptions to create a new product-wide convention.
-
-## Evidence-Based Completion
-
-Do not declare a UI complete only because the code compiles or appears correct in source. When runtime/browser/screenshot capability exists, validate the rendered result.
-
-Use:
-
-Implement → Run → Inspect rendered UI → Test realistic states/content → Test relevant viewports → Compare with source of truth → Fix → Re-run → Complete
-
-If rendered inspection is unavailable, state that limitation in the implementation summary rather than claiming visual validation occurred.
+## Definition of Done
+Primary user job clear; required references loaded; hierarchy/brand intentional; reusable patterns inspected; semantic tokens respected; responsive/accessibility intentional; anti-slop and rendered QA pass; technical checks pass; fidelity gaps disclosed.
